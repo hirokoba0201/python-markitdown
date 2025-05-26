@@ -1,0 +1,8 @@
+# 全ての機能を含むmarkitdown
+markitdown[all]
+
+# または特定の機能のみ必要な場合：
+# markitdown[xlsx]  # Excel専用
+# markitdown[docx]  # Word専用
+# markitdown[pptx]  # PowerPoint専用
+# markitdown[pdf]   # PDF専用

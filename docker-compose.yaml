@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  markitdown-converter:
+    build: .
+    container_name: markitdown-app
+    volumes:
+      # 現在のディレクトリをコンテナの/appにマウント
+      - .:/app
+    stdin_open: true # -i オプション（インタラクティブ）
+    tty: true # -t オプション（TTY割り当て）
+    working_dir: /app
+    command: python -u converter.py
+
+  # 追加：ファイル監視とホットリロード（開発用）
+  markitdown-dev:
+    build: .
+    container_name: markitdown-dev
+    volumes:
+      - .:/app
+    stdin_open: true
+    tty: true
+    working_dir: /app
+    command: /bin/bash # 開発用：bashで起動
+    profiles:
+      - dev # 開発モードでのみ起動
