@@ -20,3 +20,7 @@ docker exec -it markitdown-app bash
 ```
 python -u converter.py
 ```
+
+### 備考
+
+test_files フォルダを作成して対象ファイルを入れてください
